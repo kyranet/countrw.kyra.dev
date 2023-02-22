@@ -4,8 +4,6 @@
 
 ## TODO
 
-- [ ] Make counter re-ordering work.
-- [ ] Fix dates not inserting in the correct order for different months or years.
 - [ ] Add delay parameters to display when the next event should occur at.
 - [ ] Add "Time Since" counter, accepts a start, displays real-time difference in years, months, days, etc.
 - [ ] Add a tool to analyse the Date counter, visualize which days of the week have hits.

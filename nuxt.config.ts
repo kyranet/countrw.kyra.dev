@@ -17,6 +17,7 @@ export default defineNuxtConfig({
 			categories: ['tools'],
 			name: 'Countrw',
 			description: 'Countrw — Track your current events',
+			start_url: 'https://countrw.kyra.dev',
 			theme_color: '#047857'
 		}
 	},
@@ -35,7 +36,7 @@ export default defineNuxtConfig({
 				// <link rel='icon' type='image/png' sizes='194x194' href='/icons/android-chrome-194x194.png' />
 				// <link rel='icon' type='image/png' sizes='32x32' href='/icons/favicon-32x32.png' />
 				// <link rel='manifest' href='/manifest.webmanifest' />
-				// <link rel='mask-icon' href='/icons/safari-pinned-tab.svg' color='#55ACEE' />
+				// <link rel='mask-icon' href='/icons/safari-pinned-tab.svg' color='#047857' />
 				// <link rel='shortcut icon' href='/favicon.ico' />
 			],
 			meta: [
@@ -60,7 +61,7 @@ export default defineNuxtConfig({
 				{ name: 'identifier-URL', content: 'https://countrw.kyra.dev' },
 				{ name: 'keywords', content: 'countrw, counter' },
 				{ name: 'msapplication-config', content: '/browserconfig.xml' },
-				{ name: 'msapplication-TileColor', content: '#55ACEE' },
+				{ name: 'msapplication-TileColor', content: '#047857' },
 				// { name: 'msapplication-TileImage', content: '/icons/mstile-144x144.png' },
 				{ name: 'owner', content: 'Aura Román, kyradiscord@gmail.com' },
 				{ name: 'rating', content: 'safe for kids' },
@@ -71,7 +72,7 @@ export default defineNuxtConfig({
 				{ name: 'subject', content: 'Countrw — Track your current events' },
 				{ name: 'summary', content: 'Countrw — Track your current events.' },
 				{ name: 'target', content: 'all' },
-				{ name: 'theme-color', content: '#55ACEE' },
+				{ name: 'theme-color', content: '#047857' },
 				{ name: 'twitter:card', content: 'summary' },
 				{ name: 'twitter:creator', content: '@kyranet_' },
 				// { name: 'twitter:image', content: 'https://countrw.kyra.dev/icons/opengraph.png' },

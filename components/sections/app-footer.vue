@@ -1,7 +1,7 @@
 <template>
-	<footer class="bg-stone-100 dark:bg-stone-900">
-		<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col text-sm opacity-70">
-			<p class="sm:py-2 sm:mt-0 mt-4 flex-auto">
+	<footer class="bg-stone-100 dark:bg-stone-900 mt-8">
+		<div class="container px-5 py-8 mx-auto flex items-center flex-col sm:flex-row text-sm opacity-70">
+			<p class="flex-auto">
 				<NuxtLink href="/about" class="hover:underline">About</NuxtLink>
 			</p>
 			<p>
