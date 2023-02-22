@@ -5,9 +5,11 @@ export default defineNuxtConfig({
 		shim: false
 	},
 	nitro: {
+		preset: 'cloudflare-pages',
 		prerender: {
 			routes: ['/', '/about']
-		}
+		},
+		serveStatic: true
 	},
 	pwa: {
 		manifest: {
