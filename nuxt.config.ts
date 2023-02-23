@@ -19,7 +19,8 @@ export default defineNuxtConfig({
 			description: 'Countrw — Track your current events',
 			start_url: 'https://countrw.kyra.dev',
 			theme_color: '#047857'
-		}
+		},
+		registerType: 'autoUpdate'
 	},
 	app: {
 		head: {

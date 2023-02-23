@@ -4,7 +4,6 @@
 
 ## TODO
 
-- [ ] Add a way to import and export data.
 - [ ] Add delay parameters to display when the next event should occur at.
 - [ ] Add a tool to analyse the Date counter, visualize which days of the week have hits.
 - [ ] Add a tool to count several times per day.

@@ -19,8 +19,9 @@
 			All data is stored exclusively in your browser's
 			<NuxtLink href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">Local Storage</NuxtLink>, please keep in mind that
 			while this website does not upload any data to any server, I cannot guarantee that the data will remain safe if your PC were to be
-			compromised. Furthermore, data is not synchronized between computers, if you desire to save, back-up, or transfer your data, simply copy
-			the JSON data from your Application → Local Storage → https://countrw.kyra.dev.
+			compromised. Furthermore, data is not synchronized between computers, if you desire to save, back-up, or transfer your data, simply use
+			the buttons from the <NuxtLink href="/">Main Page</NuxtLink> under Management. Otherwise copy or edit the raw JSON data from your
+			Application → Local Storage → https://countrw.kyra.dev.
 		</p>
 		<hr />
 

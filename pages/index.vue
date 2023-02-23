@@ -11,7 +11,7 @@
 				<h2 class="font-extrabold text-2xl underline decoration-stone-200 dark:decoration-stone-600 inline">{{ entry.name }}</h2>
 				<number-counter v-if="entry.type === Type.Number" v-model:value="entry.value" />
 				<date-counter v-else-if="entry.type === Type.Date" v-model:values="entry.values" />
-				<time-counter v-else :value="new Date(entry.value)" />
+				<time-counter v-else-if="entry.type === Type.Time" :value="new Date(entry.value)" />
 			</div>
 		</div>
 	</ClientOnly>
@@ -31,6 +31,60 @@
 			</ClientOnly>
 		</form>
 	</div>
+
+	<details class="bg-stone-100 dark:bg-stone-900 sm:rounded-lg p-4 mt-4">
+		<summary class="font-extrabold text-2xl">Management</summary>
+
+		<div class="prose prose-stone dark:prose-invert max-w-none">
+			<hr>
+
+			<h2>Download</h2>
+			<div class="flex flex-col sm:flex-row text-center sm:text-left sm:gap-4 items-center">
+				<p class="w-full flex-auto">
+					Click on the above button to download the data as a JSON file. This will create a dump from your
+					<NuxtLink href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" class="underline">Local Storage</NuxtLink>
+					which you can use to save or transfer from devices.
+				</p>
+				<button class="bg-stone-200 dark:bg-stone-500 p-2 rounded-lg max-w-xs w-full h-fit" title="Download data as JSON" @click="download">
+					Download
+				</button>
+			</div>
+
+			<h2>Upload</h2>
+			<div class="flex flex-col sm:flex-row text-center sm:text-left sm:gap-4 items-center">
+				<p class="w-full flex-auto">
+					This button will replace the data from your
+					<NuxtLink href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" class="underline">Local Storage</NuxtLink>
+					with the one uploaded.
+					<span class="font-bold">This is a destructive action and cannot be reverted. Consider creating a backup beforehand.</span>
+				</p>
+				<div class="flex gap-[2px] max-w-xs w-full">
+					<ClientOnly>
+						<input
+							type="file"
+							accept=".json"
+							class="bg-stone-200 dark:bg-stone-500 p-1 w-full h-fit"
+							:class="loaded ? 'rounded-l-lg' : 'rounded-lg'"
+							title="Upload data from JSON"
+							@change="handleUploadChange"
+						/>
+						<button v-if="loaded" class="danger p-2 rounded-r-lg" title="Replace current data" @click="confirmUpload">Replace</button>
+					</ClientOnly>
+				</div>
+			</div>
+
+			<h2>Reset</h2>
+			<div class="flex flex-col sm:flex-row text-center sm:text-left sm:gap-4 items-center">
+				<p class="w-full flex-auto">
+					This button will purge the data from your
+					<NuxtLink href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" class="underline">Local Storage</NuxtLink>,
+					cleaning all of the counters.
+					<span class="font-bold">This is a destructive action and cannot be reverted. Consider creating a backup beforehand.</span>
+				</p>
+				<button class="danger p-2 rounded-lg max-w-xs w-full h-fit" title="Reset all data" @click="reset">Reset</button>
+			</div>
+		</div>
+	</details>
 </template>
 
 <script setup lang="ts">
@@ -85,6 +139,35 @@ function swap(i0: number, i1: number) {
 
 	entries.value[i0] = b;
 	entries.value[i1] = a;
+}
+
+function download() {
+	const url = URL.createObjectURL(new Blob([JSON.stringify(entries.value)], { type: 'application/json' }));
+	const a = document.createElement('a') as HTMLAnchorElement;
+	a.href = url;
+	a.download = 'countrw-data.json';
+	a.target = '_blank';
+	a.click();
+	URL.revokeObjectURL(url);
+}
+
+const loaded = ref<Data[] | null>(null);
+async function handleUploadChange(event: Event) {
+	const input = event.target as HTMLInputElement;
+	loaded.value = input.files!.length === 1 ? JSON.parse(await input.files!.item(0)!.text()) : null;
+}
+
+function confirmUpload() {
+	entries.value = [];
+
+	nextTick(() => {
+		entries.value = loaded.value;
+		loaded.value = null;
+	});
+}
+
+function reset() {
+	entries.value = [];
 }
 
 type Data = NumberCounter | DateCounter | TimeCounter;
