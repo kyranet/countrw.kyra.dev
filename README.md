@@ -1,11 +1,11 @@
 # Countrw
 
-**Countrw**, or also _Counter Web_, is a free open-source platform to track and7manage counters, built with [Nuxt v3](https://nuxt.com) and [TailwindCSS](https://tailwindcss.com), this utility aims to provide a privacy-first fast and responsive website to manage time-sensitive data.
+**Countrw**, or also _Counter Web_, is a free open-source platform to track and manage counters, built with [Nuxt v3](https://nuxt.com) and [TailwindCSS](https://tailwindcss.com), this utility aims to provide a privacy-first fast and responsive website to manage time-sensitive data.
 
 ## TODO
 
+- [ ] Add a way to import and export data.
 - [ ] Add delay parameters to display when the next event should occur at.
-- [ ] Add "Time Since" counter, accepts a start, displays real-time difference in years, months, days, etc.
 - [ ] Add a tool to analyse the Date counter, visualize which days of the week have hits.
 - [ ] Add a tool to count several times per day.
 - [ ] Add internationalisation support.

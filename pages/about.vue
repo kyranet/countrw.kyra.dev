@@ -1,5 +1,5 @@
 <template>
-	<section class="prose prose-stone dark:prose-invert max-w-none">
+	<section class="prose prose-stone dark:prose-invert max-w-none px-4 sm:px-0">
 		<h1 class="font-extrabold text-4xl py-2">About</h1>
 		<p>
 			<span class="font-bold">Countrw</span>, or also <span class="italic">Counter Web</span>, is a free open-source platform to track and

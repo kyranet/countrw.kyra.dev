@@ -2,7 +2,7 @@
 	<div class="flex flex-col h-screen">
 		<sections-app-header />
 		<div class="flex-auto justify-between mt-4">
-			<div class="w-screen">
+			<div class="w-full">
 				<main class="sm:w-5/6 lg:max-w-5xl mx-auto">
 					<slot></slot>
 				</main>
