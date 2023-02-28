@@ -12,9 +12,9 @@
 			class="bg-green-500 hover:bg-green-600 py-1 border-stone-200 dark:border-stone-800"
 			@click="$emit('update:value', value + 1)"
 		>
-			-1
+			1
 		</button>
-		<button class="bg-green-600 hover:bg-green-700 py-1 rounded-r-lg" @click="$emit('update:value', value + 10)">-10</button>
+		<button class="bg-green-600 hover:bg-green-700 py-1 rounded-r-lg" @click="$emit('update:value', value + 10)">10</button>
 	</div>
 </template>
 
