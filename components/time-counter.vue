@@ -63,6 +63,10 @@ useIntervalFn(
 	content: 'and ';
 }
 
+.counter > :only-of-type::before {
+	content: '';
+}
+
 .counter.positive::before {
 	content: 'In '
 }
